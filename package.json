@@ -1,0 +1,33 @@
+{
+  "name": "time-tracker",
+  "version": "0.1.0",
+  "description": "Time Tracker for tracking work time",
+  "main": "index.jsx",
+  "scripts": {
+    "build": "webpack --progress --colors --watch",
+    "start": "webpack-dev-server --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen-doc": "jsdoc ./src/utils/GradeScheduleFormatter.js README.md"
+  },
+  "author": "University of Cincinnati <opensource@uc.edu> (http://uc.edu/)",
+  "license": "MIT",
+  "dependencies": {
+    "immstruct": "^1.2.1",
+    "immutable": "^3.4.0",
+    "moment": "^2.8.4",
+    "react": "^0.12.2",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "6to5": "^1.15.0",
+    "6to5-loader": "^0.2.4",
+    "css-loader": "^0.9.0",
+    "jsdoc": "^3.3.0-alpha13",
+    "jsx-loader": "^0.12.2",
+    "less": "^1.7.5",
+    "less-loader": "^0.7.8",
+    "style-loader": "^0.8.2",
+    "webpack": "^1.4.13",
+    "webpack-dev-server": "^1.6.6"
+  }
+}
