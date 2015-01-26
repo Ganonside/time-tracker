@@ -26,11 +26,14 @@ var TimeTracker = React.createClass({
             <th>Day</th>
             <th>Clock In</th>
             <th>Clock Out</th>
+            <th>Elapsed</th>
           </tr>
-          {days}
+          <tbody>
+            {days}
+          </tbody>
         </table>
       </div>
-    )
+    );
 
     // return (
     //   <div className="">

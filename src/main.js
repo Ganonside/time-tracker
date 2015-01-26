@@ -14,14 +14,14 @@ var timeStruct = Immstruct('times');
 timeStruct.cursor(['times']).update(() => {
   return Immutable.fromJS({
     Sunday: {
-      clockedIn: false,
+      clockedIn: true,
       in: ['9:00', '12:00'],
       out: ['11:30']
     },
     Monday: {
       clockedIn: false,
-      in: [],
-      out: []
+      in: ['9:00'],
+      out: ['11:30']
     },
     Tuesday: {
       clockedIn: false,
@@ -51,13 +51,18 @@ timeStruct.cursor(['times']).update(() => {
   });
 });
 
-timeStruct.on('swap', render);
+timeStruct.on('swap', (newStructure) => {
+  console.log(timeStruct.cursor(['times']).toJS());
+  render()
+});
 
 var render = function() {
   var Page = React.render(
-    React.createElement(TimeTracker, {timeStruct: timeStruct}),
-    document.getElementById("time-tracker")
+    React.createElement(TimeTracker, {
+      timeStruct: timeStruct,
+      timeCur: timeStruct.cursor(['times'])
+    }), document.getElementById("time-tracker")
   );
-};
+}
 
 render();
